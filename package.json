@@ -1,0 +1,16 @@
+{
+  "name": "holamundo",
+  "version": "1.0.0",
+  "description": "un hola mundo en node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonio Rodríguez Artacho",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  }
+}
