@@ -1,0 +1,7 @@
+services:
+  - docker
+  
+deploy:
+  - provider: heroku
+    api key: ba65b5ef-02ca-4de9-a53d-6143d3742f6c
+    app: contacts-antrodart
