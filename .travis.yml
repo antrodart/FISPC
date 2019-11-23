@@ -1,7 +1,14 @@
+sudo: required
+language: node_js
 services:
   - docker
-  
+
+before_install:
+  # install heroku CLI
+  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+
 deploy:
   - provider: heroku
-    api key: ba65b5ef-02ca-4de9-a53d-6143d3742f6c
+    api_key: ba65b5ef-02ca-4de9-a53d-6143d3742f6c
     app: contacts-antrodart
+    skip_cleanup: true
