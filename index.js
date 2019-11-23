@@ -1,17 +1,19 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const Datastore = require('nedb');
+var express = require('express');
+var bodyParser = require('body-parser');
+var DataStore = require('nedb');
 
-const port = 3000;
-const BASE_API_PATH = '/api/v1';
+var port = 3000;
+var BASE_API_PATH = '/api/v1';
+//var DB_FILE_NAME = __dirname + "/contacts.json";
 
-const app = express();
+var app = express();
 app.use(bodyParser.json());
 
-const db = new Datastore({autoload: true});
-//db.insert({'name':'Prueba','phone':23258});
+var db = new DataStore({
+    //filename: DB_FILE_NAME,
+    autoload: true});
 
-app.get('/', (req, res)=> res.send('Hola mundo!'))
+app.get('/', (req, res)=> res.send('Hola mundo!'));
 app.get(BASE_API_PATH + '/contacts', (req,res) => {
     console.log(Date() + " - GET /contacts");
     db.find({}, function(err, record) {
@@ -95,4 +97,4 @@ app.delete(BASE_API_PATH + '/contact/:id', (req,res)=>{
     });
 });
 
-app.listen(port,() => console.log(`Aplicacion holamundo escuchando en el puerto ${port}`))
+app.listen(port,() => console.log(`Aplicacion holamundo escuchando en el puerto ${port}`));
