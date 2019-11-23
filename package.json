@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "un hola mundo en node",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antrodart/FISPC.git"
+  },
+  "homepage": "https://github.com/antrodart/FISPC",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
